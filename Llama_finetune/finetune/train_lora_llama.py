@@ -179,6 +179,6 @@ def train(global_args):
     trainer.model.save_pretrained(hf_train_args.output_dir)
 
 if __name__ == "__main__":
-    args = parse_args
+    args = parse_args()
     print(args)
     train(args)
