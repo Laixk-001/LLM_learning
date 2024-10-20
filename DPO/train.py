@@ -33,7 +33,7 @@ def train(train_data, dev_data, model, tokenizer, ref_model):
         report_to='tensorboard', #报告显示在tensorboard
         lr_scheduler_type='cosine', #学习率调度器类型
         warmup_steps=100, #热身步数
-        optim='adaw_hf', #优化器算法
+        optim='adamw_hf', #优化器算法
         remove_unused_columns=False, #是否剔除数据集中不相关列
         bf16=False, #是否开启bf16
         fp16=True, #是否开启fp16
