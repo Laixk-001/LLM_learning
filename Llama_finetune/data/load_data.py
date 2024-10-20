@@ -4,7 +4,7 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser(description='load_data')
-    parser.add_argument('--data_path',type=str,default='./Belle_open_source_0.5M.json',help='Belle数据地址')
+    parser.add_argument('--data_path',type=str,default='/root/autodl-fs/Belle_open_source_0.5M.json',help='Belle数据地址')
     parser.add_argument('--train_data_path',type=str,default='./train.jsonl',help='训练数据路径')
     parser.add_argument('--eval_data_path',type=str,default='./dev.jsonl',help='验证数据路径')
     parser.add_argument('--ratio',type=float,default=0.95,help='训练集占比')
