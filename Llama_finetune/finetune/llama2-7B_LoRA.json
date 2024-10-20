@@ -1,5 +1,5 @@
 {
-  "output_dir": "saved_files/llama2-7B_LoRA",
+  "output_dir": "/root/autodl-fs/Llama2-Chinese-7B/saved_files/llama2-7B_LoRA",
   "per_device_train_batch_size": 4,
   "gradient_accumulation_steps": 8,
   "per_device_eval_batch_size": 4,
