@@ -15,7 +15,7 @@ def load_data():
         train_data: 偏好对齐训练样本
         dev_data: 偏好对齐验证样本
     """
-    dataset_name="./data/zhihu_3k_rlhf"
+    dataset_name="./data/zhihu_3k_rlhf.tsv"
     ratio=0.1
     data_zh = load_dataset(path=dataset_name)
     data_all = data_zh['train'].train_test_split(ratio)
