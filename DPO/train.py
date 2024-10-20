@@ -28,7 +28,7 @@ def train(train_data, dev_data, model, tokenizer, ref_model):
         gradient_checkpointing=True, #是否开启梯度保存
         learning_rate=5e-4, #学习率
         evaluation_strategy='steps', #验证策略
-        eval_steps=10, #验证集经过多少步验证一次
+        eval_steps=20, #验证集经过多少步验证一次
         output_dir='/root/auto-fs/dpo/result-dpo', #输出路径
         report_to='tensorboard', #报告显示在tensorboard
         lr_scheduler_type='cosine', #学习率调度器类型
