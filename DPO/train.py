@@ -64,7 +64,7 @@ def train(train_data, dev_data, model, tokenizer, ref_model):
         max_length=512, #最大长度
     )
     train_result = trainer.train()
-    trainer.save_model('result')
+    trainer.save_model('/root/autodl-fs/dpo_result')
 
 def main():
     arg_model = parse_args()
