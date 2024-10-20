@@ -4,7 +4,7 @@ from datasets import load_dataset
     数据集加载
 """
 
-def load_dataset():
+def load_data():
     """
     加载偏好对齐数据集
     Args:

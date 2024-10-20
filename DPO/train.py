@@ -1,5 +1,5 @@
 from my_model import load_model,parse_args
-from data_set import load_dataset
+from data_set import load_data
 from peft import LoraConfig, TaskType
 from trl import DPOTrainer, DPOConfig
 
@@ -69,7 +69,7 @@ def train(train_data, dev_data, model, tokenizer, ref_model):
 def main():
     arg_model = parse_args()
     model, tokenizer, ref_model = load_model(arg_model)
-    train_data, dev_data = load_dataset()
+    train_data, dev_data = load_data()
     train(train_data,dev_data,model,tokenizer,ref_model)
 
 if __name__ == '__main__':
