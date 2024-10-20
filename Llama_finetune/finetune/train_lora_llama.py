@@ -128,7 +128,7 @@ def train(global_args):
 
     print("global_args.model_name_or_path", global_args.model_name_or_path)
 
-    tokenizer = AutoTokenizer.from_pretrained(global_args.model_name_or_path, trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained("Llama2-Chinese-7b-Chat",cache_dir=global_args.model_name_or_path, trust_remote_code=True,local_files_only=True)
     lora_module_name = TRANSFORMERS_MODELS_TO_LORA_TARGET_MODULES_MAPPING['llama']
 
     config = LoraConfig(r=global_args.lora_dim,
