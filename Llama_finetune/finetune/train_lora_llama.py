@@ -139,7 +139,7 @@ def train(global_args):
                         task_type=TaskType.CAUSAL_LM,
                         inference_mode=False,)
     
-    model = LlamaForCausalLM.from_pretrained(args.model_name_or_path).half().cuda()
+    model = LlamaForCausalLM.from_pretrained(args.model_name_or_path,device_map='auto').half().cuda()
 
     model = get_peft_model(model,config)
     resume_from_checkpoint = global_args.resume_from_checkpoint
