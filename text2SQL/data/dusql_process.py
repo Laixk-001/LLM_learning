@@ -55,7 +55,8 @@ class DusqlDataSet:
     # 构建sql语言
     def get_sqlite(self):
         result = {}
-        with open(os.path.join(self.home_path, "new_schema.jsonl"), "r", encoding="utf-8") as f:
+        # with open(os.path.join(self.home_path, "new_schema.jsonl"), "r", encoding="utf-8") as f:
+        with open(os.path.join(self.home_path, "db_schema.json"), "r", encoding="utf-8") as f:
             for line in f:
                 whole_sql_info = []
                 sample = json.loads(line)
