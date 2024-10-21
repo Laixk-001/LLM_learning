@@ -164,7 +164,7 @@ def parse_args():
 
 if __name__ == "__main__":
     home_path = "/root/audodl-fs/DuSQL/"
-    translation_model_path = "/root/audodl-fs/opus-mt-zh-en"
+    translation_model_path = "/root/autodl-fs/opus-mt-zh-en"
     data = DusqlDataSet(home_path, translation_model_path)
     result = data.get_sqlite()
     with open(os.path.join(home_path, "sqlite_info_zh.json"), "w", encoding="utf-8") as f:
