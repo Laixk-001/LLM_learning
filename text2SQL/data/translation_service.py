@@ -7,6 +7,7 @@ class Translation():
             model_path = model_path
         else:
             model_path = "./Helsinki-NLP/opus-mt-zh-en" #需要下载翻译模型
+        print("model_path:",model_path)
         self.tokenizer_ez = AutoTokenizer.from_pretrained(model_path)
         self.model_ez = AutoModelForSeq2SeqLM.from_pretrained(model_path).cuda()
         print("Model init finished")
