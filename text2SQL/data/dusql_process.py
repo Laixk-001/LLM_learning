@@ -164,7 +164,7 @@ def parse_args():
     return parser.parse_args()
 
 if __name__ == "__main__":
-    home_path = "/root/audodl-fs/DuSQL/"
+    home_path = "/root/autodl-fs/DuSQL/"
     translation_model_path = "/root/autodl-fs/opus-mt-zh-en"
     data = DusqlDataSet(home_path, translation_model_path)
     result = data.get_sqlite()
