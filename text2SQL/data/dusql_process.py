@@ -170,8 +170,8 @@ if __name__ == "__main__":
     new_schema = data.trans_schema()
     with open(os.path.join(home_path, "new_schema.jsonl"), "w", encoding = "utf-8")as f:
         # json.dump(new_schema,f,ensure_ascii=False)
-        for data in new_schema:
-            f.write(json.dumps(data) + '\n')
+        for n in new_schema:
+            f.write(json.dumps(n) + '\n')
     result = data.get_sqlite()
     with open(os.path.join(home_path, "sqlite_info_zh.json"), "w", encoding="utf-8") as f:
         json.dump(result, f,ensure_ascii=False)
