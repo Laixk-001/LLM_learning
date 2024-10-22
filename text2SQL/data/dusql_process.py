@@ -33,8 +33,8 @@ class DusqlDataSet:
     
     def translation_service(self, text):
         result = self.translation.translate(text)
-        en_query = result.strip(".").replace("."," ").replace(",", " ")
-        en_query = en_query.replace(" ","-")
+        en_query = result.strip(".").replace(".", " ").replace(",", " ")
+        en_query = en_query.replace(" ", "_")
         return en_query
     
     @staticmethod
