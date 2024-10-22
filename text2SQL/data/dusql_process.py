@@ -71,7 +71,7 @@ class DusqlDataSet:
                     for column in columns:
                         column_name_zh, column_type = column
                         column_name_en = columns_en[column_name_zh]
-                        column_name_en = " ".join(column_name_en.split("_"))
+                        column_name_en = " ".join([column_name_en_single.split("_") for column_name_en_single in column_name_en])
                         column_sql_type = self.get_column_types(column_type)
                         if is_first:
                             """定义为主键"""
@@ -167,11 +167,11 @@ if __name__ == "__main__":
     home_path = "/root/autodl-fs/DuSQL/"
     translation_model_path = "/root/autodl-fs/opus-mt-zh-en"
     data = DusqlDataSet(home_path, translation_model_path)
-    new_schema = data.trans_schema()
-    with open(os.path.join(home_path, "new_schema.jsonl"), "w", encoding = "utf-8")as f:
-        # json.dump(new_schema,f,ensure_ascii=False)
-        for n in new_schema:
-            f.write(json.dumps(n) + '\n')
+    # new_schema = data.trans_schema()
+    # with open(os.path.join(home_path, "new_schema.jsonl"), "w", encoding = "utf-8")as f:
+    #     # json.dump(new_schema,f,ensure_ascii=False)
+    #     for n in new_schema:
+    #         f.write(json.dumps(n) + '\n')
     result = data.get_sqlite()
     with open(os.path.join(home_path, "sqlite_info_zh.json"), "w", encoding="utf-8") as f:
         json.dump(result, f,ensure_ascii=False)
