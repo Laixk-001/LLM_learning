@@ -134,8 +134,9 @@ class DusqlDataSet:
             for sample in tqdm(samples):
                 db_id = sample["db_id"]
                 question = sample["question"]
-                sql_query_zh = sample["sql_query"]
-                sqlite_query = sample[db_id]["sqlite"]
+                sql_query_zh = sample["query"]
+                # sqlite_query = sample[db_id]["sqlite"]
+                sqlite_query = sample["sql"]
                 prompt = f"""### Instructions:
 Your task is convert a question into a SQL query, given a Postgres database schema.
 Adhere to these rules:
