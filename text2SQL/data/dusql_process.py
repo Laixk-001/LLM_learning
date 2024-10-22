@@ -71,7 +71,7 @@ class DusqlDataSet:
                     for column in columns:
                         column_name_zh, column_type = column
                         column_name_en = columns_en[column_name_zh]
-                        column_name_en = " ".join([column_name_en_single.split("_") for column_name_en_single in column_name_en])
+                        # column_name_en = " ".join(column_name_en.split("_"))
                         column_sql_type = self.get_column_types(column_type)
                         if is_first:
                             """定义为主键"""
