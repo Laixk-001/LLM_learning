@@ -55,8 +55,8 @@ class DusqlDataSet:
     # 构建sql语言
     def get_sqlite(self):
         result = {}
-        # with open(os.path.join(self.home_path, "new_schema.jsonl"), "r", encoding="utf-8") as f:
-        with open(os.path.join(self.home_path, "db_schema.json"), "r", encoding="utf-8") as f:
+        with open(os.path.join(self.home_path, "new_schema.jsonl"), "r", encoding="utf-8") as f:
+        # with open(os.path.join(self.home_path, "db_schema.json"), "r", encoding="utf-8") as f:
             for line in f:
                 whole_sql_info = []
                 sample = json.loads(line)
@@ -167,6 +167,9 @@ if __name__ == "__main__":
     home_path = "/root/autodl-fs/DuSQL/"
     translation_model_path = "/root/autodl-fs/opus-mt-zh-en"
     data = DusqlDataSet(home_path, translation_model_path)
+    new_schema = data.trans_schema()
+    with open(os.path.join(home_path, "new_schema.jsonl"), "w", encoding = "utf-8")as f:
+        json.dump(new_schema,f,ensure_ascii=False)
     result = data.get_sqlite()
     with open(os.path.join(home_path, "sqlite_info_zh.json"), "w", encoding="utf-8") as f:
         json.dump(result, f,ensure_ascii=False)
